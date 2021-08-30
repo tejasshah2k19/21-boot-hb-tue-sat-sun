@@ -1,0 +1,51 @@
+1) 	add dep 
+	1) spring web
+	2) spring data jpa
+	3) pg driver 
+	
+2) application.properties 
+
+	server port 
+	server.port=9999
+	
+	db connection properties 
+	spring.datasource.url=jdbc:postgresql://localhost:5432/spring
+	spring.datasource.username=postgres
+	spring.datasource.password=root
+	
+	hibernate properties 
+	spring.jpa.show-sql=true
+	spring.jpa.hibernate.ddl-auto=update
+	spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect	
+	
+
+3) create database in pg 
+
+4) create entity folder and create one entity user 
+
+	check user entity 
+	
+	
+5) add @EnableJpaAuditing  [ @SpringBootApplication ] 
+		so we can automatically map createdAt and updatedAt 
+
+6) JPA--> repository -> interface 
+
+7) create controller and restapi 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
