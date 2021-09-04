@@ -33,7 +33,76 @@
 
 7) create controller and restapi 
 
+--------------------------------------------------------------------------------------
+2.0
+--------------------------------------------------------------------------------------
 
+
+
+1) pom.xml
+	spring starter data jpa 
+	pg driver 
+
+2) configuration - application.properties 
+	spring.datasource.*
+	
+	spring.jpa and spring.hibernate 
+
+3)  class -> UserEntity 
+	@Entity
+	@Table(name="users")
+
+	@Id
+	@GeneratedValue
+	Long userId;
+	
+	@NotBlank(message = "Please Enter firstName")
+	String firstName;
+	
+	@Column(nullable = false,updatable = false)
+	String email;
+4) repository 
+	UserRepository --> interface 
+		extends JpaRepository<UserEntity, Long>
+	
+
+5) controller 
+		@Autowired
+		UserRepository userRepo; 
+
+		
+For created and updatedAt we can have two ways 1) using hibernate 2) using persistnace api
+
+1) using hiberante 
+		@CreationTimestamp
+		Date createdAt;
+
+		@UpdateTimestamp
+ 		Date updatedAt;
+
+2) using persistance 
+	@Temporal(TemporalType.TIMESTAMP)
+	@CreatedDate
+	Date createdAt;
+
+	@Temporal(TemporalType.TIMESTAMP)
+	@LastModifiedDate
+	Date updatedAt;
+
+	we also need to enable jpa audition for this and the ,  add one listener in entity or we can create bean** in 		@Configuration,
+	1) @EnableJpaAuditing ---- in @SpringBootApplication 
+	2) adding listener in entity 
+		@EntityListeners(AuditingEntityListener.class)
+ 	
+	--------------------------------------------
+	
+	on entity level we can ignore field using 
+	@JsonIgnoreProperties(allowSetters = true,value = "password")
+	
+	or 
+	
+	we can use field level annotation
+	@JsonProperty(access = Access.WRITE_ONLY)
 
 
 
