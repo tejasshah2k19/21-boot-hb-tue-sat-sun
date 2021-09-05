@@ -106,7 +106,19 @@ For created and updatedAt we can have two ways 1) using hibernate 2) using persi
 
 
 
+-----------------------------------------------------------
+spring security 
 
+
+1) pom.xml 
+	-> add spring security using edit starter 
+		-> we get spring-boot-starter-security 
+		
+2) we need to override the  default configuration 
+
+	-> create config folder 
+	-> create MySecurityConfig class 
+	-> mark this class with @Configuration and @EnableWebSecurity 
 
 
 

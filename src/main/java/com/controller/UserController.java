@@ -1,6 +1,7 @@
 package com.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,8 +25,12 @@ public class UserController {
 		resp.setData(user);
 		resp.setMsg("signup done");
 		resp.setStatus(200);
-		
+
 		return resp;
 	}
 
+	@GetMapping("/getusers")
+	public String getUsers() {
+		return "{\"userName\":\"Admin\"}";
+	}
 }
