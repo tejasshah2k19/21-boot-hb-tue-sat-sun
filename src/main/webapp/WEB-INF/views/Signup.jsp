@@ -7,11 +7,12 @@
 <title>Signup</title>
 </head>
 <body>
-	<form action="saveuser" method="post">
+	<form action="/public/saveuser" method="post">
+	Username: <input type="text" name="username"/> <br>
 		FirstName : <input type="text" name="firstName" /> <Br> Email :
 		<input type="text" name="email" /> <Br> Password : <input
 			type="text" name="password" /> <Br> <input type="submit"
 			value="Signup" />
 	</form>
-</body>
+</body>     
 </html>

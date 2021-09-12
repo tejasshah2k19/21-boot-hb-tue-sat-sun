@@ -121,6 +121,22 @@ spring security
 	-> mark this class with @Configuration and @EnableWebSecurity 
 
 
+------------------------------------------------------------
+
+implementation with db , 
+make sure for jdbc using jpa - hibernate 
+
+create UserEntity with username and password also it has role. 
+
+now you can create signup page for signup or directly insert few users in db directly.
+
+
+
+
+
+
+
+ 
 
 
 

@@ -24,15 +24,27 @@ public class SessionController {
 
 	}
 
-	@PostMapping("/saveuser")
+	@PostMapping("/saveuser") // /public/saveuser
 	public String saveUser(UserEntity user) {
+		user.setRole("ROLE_USERS");
+		System.out.println(user.getUsername());
 		userRepository.save(user);
 		return "redirect:/users";
 	}
 
- @GetMapping("/signin")
- public String signin() {
-	 	return "Login";
- }
+	@GetMapping("/signin")
+	public String signin() {
+		return "Login";
+	}
+
+	@GetMapping("/demo")
+	public String demo() {
+		return "demo";
+	}
+	@PostMapping("/demo")
+	public String demo1() {
+		return "demo1";
+	}
+	
 
 }

@@ -32,6 +32,8 @@ public class UserEntity {
 	@GeneratedValue
 	Long userId;
 
+	String username; 
+	
 	@NotBlank(message = "Please Enter firstName")
 	String firstName;
 
@@ -43,6 +45,9 @@ public class UserEntity {
 	@JsonProperty(access = Access.WRITE_ONLY)
 	String password;
 
+	
+	String role;
+	
 	@Temporal(TemporalType.TIMESTAMP)
 	@CreatedDate
 	Date createdAt;
@@ -57,8 +62,26 @@ public class UserEntity {
 //	@UpdateTimestamp
 //	Date updatedAt;
 
+	
+	
 	public Long getUserId() {
 		return userId;
+	}
+
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public void setUserId(Long userId) {

@@ -19,8 +19,10 @@ public class UserController {
 	@PostMapping("/signup")
 	public ResponseBean<UserEntity> signup(@RequestBody UserEntity user) {
 
+		
+		user.setRole("ROLE_USERS");//prefix ROLE 
 		userRepository.save(user);
-
+		
 		ResponseBean<UserEntity> resp = new ResponseBean<>();
 		resp.setData(user);
 		resp.setMsg("signup done");
