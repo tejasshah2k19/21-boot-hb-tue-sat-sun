@@ -32,7 +32,7 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
 		.authenticated()
 		.and()
 		.formLogin()
-		.loginPage("/public/signin");
+		.loginPage("/public/login");
 	}
 
 //	protected void configure(AuthenticationManagerBuilder auth) throws Exception {

@@ -24,4 +24,5 @@ public class UserController2 {
 		return "Home";
 	}
 
+	
 }

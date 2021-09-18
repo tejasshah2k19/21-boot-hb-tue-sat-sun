@@ -10,7 +10,8 @@
 </head>
 <body>
 	<h2>List Users</h2>
-	<a href="signup">Add More User </a>
+	<a href="signup">Add More User </a> |
+	<a href="../logout">Logout</a>
 	
 	<table border="1">
 		<thead>

@@ -32,6 +32,7 @@ public class UserEntity {
 	@GeneratedValue
 	Long userId;
 
+	@Column(unique = true)
 	String username; 
 	
 	@NotBlank(message = "Please Enter firstName")

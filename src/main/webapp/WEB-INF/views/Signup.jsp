@@ -14,5 +14,7 @@
 			type="text" name="password" /> <Br> <input type="submit"
 			value="Signup" />
 	</form>
+	<br>
+	${error}
 </body>     
 </html>
