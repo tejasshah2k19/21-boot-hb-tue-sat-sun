@@ -10,6 +10,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 
 import com.service.CustomUserDetailsService;
 
@@ -22,7 +23,10 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	protected void configure(HttpSecurity http) throws Exception {
 //		http.authorizeRequests().anyRequest().authenticated().and().httpBasic();
-		http.csrf().disable()
+		http
+//		.csrf().disable()
+		.csrf().csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
+		.and()
 		.authorizeRequests()
 		.antMatchers("/admin/**").hasRole("ADMIN")
 		.antMatchers("/user/**").hasRole("USERS")
@@ -32,7 +36,9 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
 		.authenticated()
 		.and()
 		.formLogin()
-		.loginPage("/public/login");
+		.loginPage("/public/login")
+		.usernameParameter("email")
+		;
 	}
 
 //	protected void configure(AuthenticationManagerBuilder auth) throws Exception {

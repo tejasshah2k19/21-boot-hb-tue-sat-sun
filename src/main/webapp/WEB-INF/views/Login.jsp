@@ -10,11 +10,12 @@
 <body>
 	<h2>Login</h2>
 	<form method="post" action="login">
-		Username: <input type="text" name="username"><br>
-		Password: <input type="password" name="password" /><br> <input
-			type="submit" value="Login" />
+		Email: <input type="text" name="email"><br> Password: <input
+			type="password" name="password" /><br> <input type="submit"
+			value="Login" /> <input type="hidden" name="${_csrf.parameterName}"
+			value="${_csrf.token}" />
 	</form>
-	<br> 
+	<br>
 	<c:if test="${param.error != null}">
 		Invalid Credentials
 	</c:if>

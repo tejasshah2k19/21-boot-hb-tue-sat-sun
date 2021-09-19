@@ -10,26 +10,19 @@ import com.entity.UserEntity;
 import com.repository.UserRepository;
 
 @Service
-public class CustomUserDetailsService implements UserDetailsService{
+public class CustomUserDetailsService implements UserDetailsService {
 
 	@Autowired
 	UserRepository userRepository;
-	
+
 	@Override
-	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		// TODO Auto-generated method stub
-		UserEntity  user = userRepository.findByUsername(username);
-		if(user == null) {
-			throw new UsernameNotFoundException("Invalid username");
-		} 
+	public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+
+		UserEntity user = userRepository.findByEmail(email);
+		if (user == null) {
+			throw new UsernameNotFoundException("Invalid Email");
+		}
 		return new CustomUserDetails(user);
 	}
 
 }
-
-
-
-
-
-
-
